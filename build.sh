@@ -1,0 +1,1 @@
+ scala --power package --js App.scala  -f
