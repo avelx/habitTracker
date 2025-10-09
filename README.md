@@ -27,3 +27,9 @@ ScalaJs-Dom:
 
 ScalaTags:
     https://com-lihaoyi.github.io/scalatags/#BasicExamples
+
+
+---------------------------------------------------------------------------------------------------
+
+TODO: 
+    * Fix issue with SBT / still can not find dependencies; 
