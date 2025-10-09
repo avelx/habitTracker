@@ -4538,14 +4538,12 @@ $c_LHabitTracker$.prototype.reselectTabs__T__V = (function(selected) {
   var these = this$1;
   while ((!$n(these).isEmpty__Z())) {
     var x0 = $n(these).head__O();
-    var s = $as_T(x0);
+    var section = $as_T(x0);
+    var actualId = (section + "Link");
     matchResult3: {
-      var x5 = document.getElementById(s);
+      var x5 = document.getElementById(actualId);
       if ($uZ((x5 instanceof HTMLAnchorElement))) {
-        var this$3 = $m_s_Console$();
-        var this$4 = $n(this$3.out__Ljava_io_PrintStream());
-        this$4.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x5 + "\n"));
-        if ((selected === s)) {
+        if ((selected === actualId)) {
           x5.className = "active nav-link";
           break matchResult3;
         } else {
@@ -4554,6 +4552,22 @@ $c_LHabitTracker$.prototype.reselectTabs__T__V = (function(selected) {
         }
       }
       throw new $c_s_MatchError(x5);
+    }
+    matchResult4: {
+      var x7 = document.getElementById(section);
+      if ($uZ((x7 instanceof HTMLDivElement))) {
+        var this$3 = $m_s_Console$();
+        var this$4 = $n(this$3.out__Ljava_io_PrintStream());
+        this$4.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x7 + "\n"));
+        if ((selected === actualId)) {
+          x7.style = "display: block";
+          break matchResult4;
+        } else {
+          x7.style = "display: none";
+          break matchResult4;
+        }
+      }
+      throw new $c_s_MatchError(x7);
     }
     these = $as_sci_List($n(these).tail__O());
   }
@@ -4567,20 +4581,20 @@ $c_LHabitTracker$.prototype.addTabs__Lscalatags_JsDom$TypedTag = (function() {
   var $x_33 = $n($m_Lscalatags_JsDom$all$().cls__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("nav-item", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
   var $x_32 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().a__Lscalatags_generic_TypedTag());
   var $x_31 = $m_sr_ScalaRunTime$();
-  var $x_30 = $n($m_Lscalatags_JsDom$all$().id__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("sectionA", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
+  var $x_30 = $n($m_Lscalatags_JsDom$all$().id__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("sectionALink", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
   var $x_29 = $n($m_Lscalatags_JsDom$all$().cls__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("active nav-link", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
   $m_Lscalatags_JsDom$all$();
   var $x_28 = new $c_Lscalatags_JsDom$StringFrag(" Daily ");
   var $x_27 = $n($m_Lscalatags_JsDom$all$().href__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("#", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
   var $x_26 = $m_Lscalatags_JsDom$all$().onclick__Lscalatags_generic_Attr();
   var $x_25 = new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => {
-    matchResult4: {
-      var x7 = document.getElementById("sectionA");
-      if ($uZ((x7 instanceof HTMLAnchorElement))) {
-        $m_LHabitTracker$().reselectTabs__T__V("sectionA");
-        break matchResult4;
+    matchResult5: {
+      var x9 = document.getElementById("sectionALink");
+      if ($uZ((x9 instanceof HTMLAnchorElement))) {
+        $m_LHabitTracker$().reselectTabs__T__V("sectionALink");
+        break matchResult5;
       }
-      throw new $c_s_MatchError(x7);
+      throw new $c_s_MatchError(x9);
     }
   }));
   $m_Lscalatags_JsDom$all$();
@@ -4588,26 +4602,26 @@ $c_LHabitTracker$.prototype.addTabs__Lscalatags_JsDom$TypedTag = (function() {
     var f$1 = $as_F0(f);
     return $m_sjs_js_Any$().fromFunction0__F0__sjs_js_Function0(f$1);
   }));
-  var $x_24 = $x_35.apply__sci_Seq__Lscalatags_JsDom$TypedTag($x_34.wrapRefArray__AO__sci_ArraySeq(new ($d_Lscalatags_generic_Modifier.getArrayOf().constr)([$x_33, $n($x_32).apply__sci_Seq__Lscalatags_JsDom$TypedTag($x_31.wrapRefArray__AO__sci_ArraySeq(new ($d_Lscalatags_generic_Modifier.getArrayOf().constr)([$x_30, $x_29, $x_28, $x_27, $n($x_26).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($x_25, new $c_Lscalatags_LowPriorityImplicits$$anon$2(ev))])))])));
+  var $x_24 = $x_35.apply__sci_Seq__Lscalatags_JsDom$TypedTag($x_34.wrapRefArray__AO__sci_ArraySeq(new ($d_Lscalatags_generic_Modifier.getArrayOf().constr)([$x_33, $n($x_32).apply__sci_Seq__Lscalatags_JsDom$TypedTag($x_31.wrapRefArray__AO__sci_ArraySeq(new ($d_Lscalatags_generic_Modifier.getArrayOf().constr)([$x_30, $x_29, $x_28, $x_27, $n($x_26).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($x_25, new $c_Lscalatags_LowPriorityImplicits$$anon$2(ev))]))), $n($as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag())).apply__sci_Seq__Lscalatags_JsDom$TypedTag($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lscalatags_generic_Modifier.getArrayOf().constr)([$n($m_Lscalatags_JsDom$all$().id__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("sectionA", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr), ($m_Lscalatags_JsDom$all$(), new $c_Lscalatags_JsDom$StringFrag("Section A => "))])))])));
   var $x_23 = $n($as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().li__Lscalatags_generic_TypedTag()));
   var $x_22 = $m_sr_ScalaRunTime$();
   var $x_21 = $n($m_Lscalatags_JsDom$all$().cls__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("nav-item", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
   var $x_20 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().a__Lscalatags_generic_TypedTag());
   var $x_19 = $m_sr_ScalaRunTime$();
-  var $x_18 = $n($m_Lscalatags_JsDom$all$().id__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("sectionB", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
+  var $x_18 = $n($m_Lscalatags_JsDom$all$().id__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("sectionBLink", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
   var $x_17 = $n($m_Lscalatags_JsDom$all$().cls__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("nav-link", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
   $m_Lscalatags_JsDom$all$();
   var $x_16 = new $c_Lscalatags_JsDom$StringFrag("Manage Habits");
   var $x_15 = $n($m_Lscalatags_JsDom$all$().href__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("#", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
   var $x_14 = $m_Lscalatags_JsDom$all$().onclick__Lscalatags_generic_Attr();
   var $x_13 = new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => {
-    matchResult5: {
-      var x9 = document.getElementById("sectionB");
-      if ($uZ((x9 instanceof HTMLAnchorElement))) {
-        $m_LHabitTracker$().reselectTabs__T__V("sectionB");
-        break matchResult5;
+    matchResult6: {
+      var x11 = document.getElementById("sectionBLink");
+      if ($uZ((x11 instanceof HTMLAnchorElement))) {
+        $m_LHabitTracker$().reselectTabs__T__V("sectionBLink");
+        break matchResult6;
       }
-      throw new $c_s_MatchError(x9);
+      throw new $c_s_MatchError(x11);
     }
   }));
   $m_Lscalatags_JsDom$all$();
@@ -4615,26 +4629,26 @@ $c_LHabitTracker$.prototype.addTabs__Lscalatags_JsDom$TypedTag = (function() {
     var f$3 = $as_F0(f$2);
     return $m_sjs_js_Any$().fromFunction0__F0__sjs_js_Function0(f$3);
   }));
-  var $x_12 = $x_23.apply__sci_Seq__Lscalatags_JsDom$TypedTag($x_22.wrapRefArray__AO__sci_ArraySeq(new ($d_Lscalatags_generic_Modifier.getArrayOf().constr)([$x_21, $n($x_20).apply__sci_Seq__Lscalatags_JsDom$TypedTag($x_19.wrapRefArray__AO__sci_ArraySeq(new ($d_Lscalatags_generic_Modifier.getArrayOf().constr)([$x_18, $x_17, $x_16, $x_15, $n($x_14).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($x_13, new $c_Lscalatags_LowPriorityImplicits$$anon$2(ev$1))])))])));
+  var $x_12 = $x_23.apply__sci_Seq__Lscalatags_JsDom$TypedTag($x_22.wrapRefArray__AO__sci_ArraySeq(new ($d_Lscalatags_generic_Modifier.getArrayOf().constr)([$x_21, $n($x_20).apply__sci_Seq__Lscalatags_JsDom$TypedTag($x_19.wrapRefArray__AO__sci_ArraySeq(new ($d_Lscalatags_generic_Modifier.getArrayOf().constr)([$x_18, $x_17, $x_16, $x_15, $n($x_14).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($x_13, new $c_Lscalatags_LowPriorityImplicits$$anon$2(ev$1))]))), $n($as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag())).apply__sci_Seq__Lscalatags_JsDom$TypedTag($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lscalatags_generic_Modifier.getArrayOf().constr)([$n($m_Lscalatags_JsDom$all$().id__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("sectionB", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr), ($m_Lscalatags_JsDom$all$(), new $c_Lscalatags_JsDom$StringFrag("Section B => "))])))])));
   var $x_11 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().li__Lscalatags_generic_TypedTag());
   var $x_10 = $m_sr_ScalaRunTime$();
   var $x_9 = $n($m_Lscalatags_JsDom$all$().cls__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("nav-item", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
   var $x_8 = $as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().a__Lscalatags_generic_TypedTag());
   var $x_7 = $m_sr_ScalaRunTime$();
-  var $x_6 = $n($m_Lscalatags_JsDom$all$().id__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("sectionC", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
+  var $x_6 = $n($m_Lscalatags_JsDom$all$().id__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("sectionCLink", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
   var $x_5 = $n($m_Lscalatags_JsDom$all$().cls__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("nav-link", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
   $m_Lscalatags_JsDom$all$();
-  var $x_4 = new $c_Lscalatags_JsDom$StringFrag("Stats | Help");
+  var $x_4 = new $c_Lscalatags_JsDom$StringFrag("Stats");
   var $x_3 = $n($m_Lscalatags_JsDom$all$().href__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("#", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
   var $x_2 = $m_Lscalatags_JsDom$all$().onclick__Lscalatags_generic_Attr();
   var $x_1 = new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => {
-    matchResult6: {
-      var x11 = document.getElementById("sectionB");
-      if ($uZ((x11 instanceof HTMLAnchorElement))) {
-        $m_LHabitTracker$().reselectTabs__T__V("sectionC");
-        break matchResult6;
+    matchResult7: {
+      var x13 = document.getElementById("sectionCLink");
+      if ($uZ((x13 instanceof HTMLAnchorElement))) {
+        $m_LHabitTracker$().reselectTabs__T__V("sectionCLink");
+        break matchResult7;
       }
-      throw new $c_s_MatchError(x11);
+      throw new $c_s_MatchError(x13);
     }
   }));
   $m_Lscalatags_JsDom$all$();
@@ -4642,11 +4656,12 @@ $c_LHabitTracker$.prototype.addTabs__Lscalatags_JsDom$TypedTag = (function() {
     var f$4 = $as_F0(f$3$1);
     return $m_sjs_js_Any$().fromFunction0__F0__sjs_js_Function0(f$4);
   }));
-  return $x_38.apply__sci_Seq__Lscalatags_JsDom$TypedTag($x_37.wrapRefArray__AO__sci_ArraySeq(new ($d_Lscalatags_generic_Modifier.getArrayOf().constr)([$x_36, $x_24, $x_12, $n($x_11).apply__sci_Seq__Lscalatags_JsDom$TypedTag($x_10.wrapRefArray__AO__sci_ArraySeq(new ($d_Lscalatags_generic_Modifier.getArrayOf().constr)([$x_9, $n($x_8).apply__sci_Seq__Lscalatags_JsDom$TypedTag($x_7.wrapRefArray__AO__sci_ArraySeq(new ($d_Lscalatags_generic_Modifier.getArrayOf().constr)([$x_6, $x_5, $x_4, $x_3, $n($x_2).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($x_1, new $c_Lscalatags_LowPriorityImplicits$$anon$2(ev$2))])))])))])));
+  return $x_38.apply__sci_Seq__Lscalatags_JsDom$TypedTag($x_37.wrapRefArray__AO__sci_ArraySeq(new ($d_Lscalatags_generic_Modifier.getArrayOf().constr)([$x_36, $x_24, $x_12, $n($x_11).apply__sci_Seq__Lscalatags_JsDom$TypedTag($x_10.wrapRefArray__AO__sci_ArraySeq(new ($d_Lscalatags_generic_Modifier.getArrayOf().constr)([$x_9, $n($x_8).apply__sci_Seq__Lscalatags_JsDom$TypedTag($x_7.wrapRefArray__AO__sci_ArraySeq(new ($d_Lscalatags_generic_Modifier.getArrayOf().constr)([$x_6, $x_5, $x_4, $x_3, $n($x_2).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair($x_1, new $c_Lscalatags_LowPriorityImplicits$$anon$2(ev$2))]))), $n($as_Lscalatags_JsDom$TypedTag($m_Lscalatags_JsDom$all$().div__Lscalatags_generic_TypedTag())).apply__sci_Seq__Lscalatags_JsDom$TypedTag($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lscalatags_generic_Modifier.getArrayOf().constr)([$n($m_Lscalatags_JsDom$all$().id__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("sectionC", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr), ($m_Lscalatags_JsDom$all$(), new $c_Lscalatags_JsDom$StringFrag("Section C => "))])))])))])));
 });
 $c_LHabitTracker$.prototype.build__V = (function() {
   var tabs = this.addTabs__Lscalatags_JsDom$TypedTag();
   this.LHabitTracker$__f_app.appendChild($n(tabs).render__Lorg_scalajs_dom_Element());
+  this.reselectTabs__T__V("sectionALink");
 });
 var $d_LHabitTracker$ = new $TypeData().initClass($c_LHabitTracker$, "HabitTracker$", ({
   LHabitTracker$: 1,
@@ -7140,6 +7155,8 @@ function $c_Lscalatags_JsDom$all$() {
   this.Lscalatags_JsDom$all$__f_ulbitmap$2 = false;
   this.Lscalatags_JsDom$all$__f_li$lzy2 = null;
   this.Lscalatags_JsDom$all$__f_libitmap$2 = false;
+  this.Lscalatags_JsDom$all$__f_div$lzy2 = null;
+  this.Lscalatags_JsDom$all$__f_divbitmap$2 = false;
   this.Lscalatags_JsDom$all$__f_a$lzy2 = null;
   this.Lscalatags_JsDom$all$__f_abitmap$2 = false;
   this.Lscalatags_JsDom$all$__f_stringAttr = null;
@@ -7206,6 +7223,14 @@ $c_Lscalatags_JsDom$all$.prototype.li__Lscalatags_generic_TypedTag = (function()
     this.Lscalatags_JsDom$all$__f_libitmap$2 = true;
   }
   return this.Lscalatags_JsDom$all$__f_li$lzy2;
+});
+$c_Lscalatags_JsDom$all$.prototype.div__Lscalatags_generic_TypedTag = (function() {
+  if ((!this.Lscalatags_JsDom$all$__f_divbitmap$2)) {
+    var ns = $m_Lscalatags_generic_Namespace$().Lscalatags_generic_Namespace$__f_htmlNamespaceConfig;
+    this.Lscalatags_JsDom$all$__f_div$lzy2 = $f_Lscalatags_jsdom_TagFactory__typedTag__T__Z__Lscalatags_generic_Namespace__Lscalatags_generic_TypedTag(this, "div", false, ns);
+    this.Lscalatags_JsDom$all$__f_divbitmap$2 = true;
+  }
+  return this.Lscalatags_JsDom$all$__f_div$lzy2;
 });
 $c_Lscalatags_JsDom$all$.prototype.a__Lscalatags_generic_TypedTag = (function() {
   if ((!this.Lscalatags_JsDom$all$__f_abitmap$2)) {

@@ -50,3 +50,6 @@ build/
 /.bloop/*
 /project/.bloop/*
 /.metals/*
+/project/project/metals.sbt
+/project/metals.sbt
+/temp.html

@@ -65,16 +65,25 @@ object HabitTracker extends App {
 
   val sections = List("sectionA", "sectionB", "sectionC")
 
+
   def reselectTabs(selected: String) = {
-    sections.foreach(s => {
-      dom.document.getElementById(s) match {
+    sections.foreach(section => {
+      val actualId = section + "Link"
+      dom.document.getElementById(actualId) match {
                   case aref: dom.HTMLAnchorElement =>
-                    println(aref)
-                    if (selected == s) 
+                    if (selected == actualId) 
                       aref.className = "active nav-link"
                     else 
                       aref.className = "nav-link"
-                }
+      }
+      dom.document.getElementById(section) match {
+                  case dd: dom.HTMLDivElement =>
+                    println(dd)
+                    if (selected == actualId) 
+                      dd.style = "display: block"
+                    else 
+                      dd.style = "display: none"
+      }
     })
   }
 
@@ -85,69 +94,73 @@ object HabitTracker extends App {
           cls:="nav-item",
           a
           (
-              id := "sectionA", 
+              id := "sectionALink", 
               cls:="active nav-link",
               " Daily ",
               href:="#",
               onclick := { () => 
-                dom.document.getElementById("sectionA") match {
+                dom.document.getElementById("sectionALink") match {
                   case aref: dom.HTMLAnchorElement =>
-                      reselectTabs("sectionA")
+                      reselectTabs("sectionALink")
                 }
               }
+          ),
+          div( 
+            id := "sectionA",
+            "Section A => "
           )
         ),
         li(
           cls:="nav-item",
           a(    
-              id := "sectionB",
+              id := "sectionBLink",
               cls:="nav-link",
               "Manage Habits",
               href:="#",
               onclick := { () => 
-                dom.document.getElementById("sectionB") match {
+                dom.document.getElementById("sectionBLink") match {
                   case aref: dom.HTMLAnchorElement =>
-                     reselectTabs("sectionB")
+                     reselectTabs("sectionBLink")
                 }
               }
+          ),
+          div( 
+            id := "sectionB",
+            "Section B => "
           )
         ),
         li(
           cls:="nav-item",
            a(    
-              id := "sectionC", 
+              id := "sectionCLink", 
               cls:="nav-link",
-              "Stats | Help",
+              "Stats",
               href:="#",
               onclick := { () => 
-                dom.document.getElementById("sectionB") match {
+                dom.document.getElementById("sectionCLink") match {
                   case aref: dom.HTMLAnchorElement =>
-                     reselectTabs("sectionC")
+                     reselectTabs("sectionCLink")
                 }
             }
+          ),
+          div( 
+            id := "sectionC",
+            "Section C => "
           )
         )
       )
   }
 
-  //  val d = div(
-  //    br(),
-  //    br(),
-  //    button(
-  //      backgroundColor := "blue",
-  //      "Simple button",
-  //      onclick := { () => println("Blue button") }
-  //    ),
-  //    br(),
-  //    br(),
-  //    getButton("Greeb")
-  //  )
-
-
   def build(): Unit = {
-    //val in = getInput("hName")
+    // Initial tab selection: sectionA
     val tabs = addTabs()
     app.appendChild(tabs.render)
+
+    //val in = getInput("hName")
+    
+
+    reselectTabs("sectionALink")
+
   }
 
   build()
