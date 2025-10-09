@@ -87,14 +87,13 @@ object HabitTracker extends App {
           (
               id := "sectionA", 
               cls:="active nav-link",
-              "Section A",
+              " Daily ",
               href:="#",
               onclick := { () => 
                 dom.document.getElementById("sectionA") match {
                   case aref: dom.HTMLAnchorElement =>
                       reselectTabs("sectionA")
                 }
-                println("A") 
               }
           )
         ),
@@ -103,14 +102,13 @@ object HabitTracker extends App {
           a(    
               id := "sectionB",
               cls:="nav-link",
-              "Section B",
+              "Manage Habits",
               href:="#",
               onclick := { () => 
                 dom.document.getElementById("sectionB") match {
                   case aref: dom.HTMLAnchorElement =>
                      reselectTabs("sectionB")
                 }
-                println("B") 
               }
           )
         ),
@@ -119,14 +117,14 @@ object HabitTracker extends App {
            a(    
               id := "sectionC", 
               cls:="nav-link",
-              "Section C",
+              "Stats | Help",
               href:="#",
               onclick := { () => 
                 dom.document.getElementById("sectionB") match {
                   case aref: dom.HTMLAnchorElement =>
-                     reselectTabs("sectionB")
+                     reselectTabs("sectionC")
                 }
-                println("C") }
+            }
           )
         )
       )

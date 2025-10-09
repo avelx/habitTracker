@@ -4570,7 +4570,7 @@ $c_LHabitTracker$.prototype.addTabs__Lscalatags_JsDom$TypedTag = (function() {
   var $x_30 = $n($m_Lscalatags_JsDom$all$().id__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("sectionA", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
   var $x_29 = $n($m_Lscalatags_JsDom$all$().cls__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("active nav-link", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
   $m_Lscalatags_JsDom$all$();
-  var $x_28 = new $c_Lscalatags_JsDom$StringFrag("Section A");
+  var $x_28 = new $c_Lscalatags_JsDom$StringFrag(" Daily ");
   var $x_27 = $n($m_Lscalatags_JsDom$all$().href__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("#", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
   var $x_26 = $m_Lscalatags_JsDom$all$().onclick__Lscalatags_generic_Attr();
   var $x_25 = new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => {
@@ -4582,9 +4582,6 @@ $c_LHabitTracker$.prototype.addTabs__Lscalatags_JsDom$TypedTag = (function() {
       }
       throw new $c_s_MatchError(x7);
     }
-    var this$3 = $m_s_Console$();
-    var this$4 = $n(this$3.out__Ljava_io_PrintStream());
-    this$4.java$lang$JSConsoleBasedPrintStream$$printString__T__V("A\n");
   }));
   $m_Lscalatags_JsDom$all$();
   var ev = new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((f) => {
@@ -4600,7 +4597,7 @@ $c_LHabitTracker$.prototype.addTabs__Lscalatags_JsDom$TypedTag = (function() {
   var $x_18 = $n($m_Lscalatags_JsDom$all$().id__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("sectionB", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
   var $x_17 = $n($m_Lscalatags_JsDom$all$().cls__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("nav-link", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
   $m_Lscalatags_JsDom$all$();
-  var $x_16 = new $c_Lscalatags_JsDom$StringFrag("Section B");
+  var $x_16 = new $c_Lscalatags_JsDom$StringFrag("Manage Habits");
   var $x_15 = $n($m_Lscalatags_JsDom$all$().href__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("#", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
   var $x_14 = $m_Lscalatags_JsDom$all$().onclick__Lscalatags_generic_Attr();
   var $x_13 = new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => {
@@ -4612,9 +4609,6 @@ $c_LHabitTracker$.prototype.addTabs__Lscalatags_JsDom$TypedTag = (function() {
       }
       throw new $c_s_MatchError(x9);
     }
-    var this$8 = $m_s_Console$();
-    var this$9 = $n(this$8.out__Ljava_io_PrintStream());
-    this$9.java$lang$JSConsoleBasedPrintStream$$printString__T__V("B\n");
   }));
   $m_Lscalatags_JsDom$all$();
   var ev$1 = new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((f$2) => {
@@ -4630,21 +4624,18 @@ $c_LHabitTracker$.prototype.addTabs__Lscalatags_JsDom$TypedTag = (function() {
   var $x_6 = $n($m_Lscalatags_JsDom$all$().id__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("sectionC", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
   var $x_5 = $n($m_Lscalatags_JsDom$all$().cls__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("nav-link", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
   $m_Lscalatags_JsDom$all$();
-  var $x_4 = new $c_Lscalatags_JsDom$StringFrag("Section C");
+  var $x_4 = new $c_Lscalatags_JsDom$StringFrag("Stats | Help");
   var $x_3 = $n($m_Lscalatags_JsDom$all$().href__Lscalatags_generic_Attr()).$colon$eq__O__Lscalatags_generic_AttrValue__Lscalatags_generic_AttrPair("#", $m_Lscalatags_JsDom$all$().Lscalatags_JsDom$all$__f_stringAttr);
   var $x_2 = $m_Lscalatags_JsDom$all$().onclick__Lscalatags_generic_Attr();
   var $x_1 = new $c_sr_AbstractFunction0_$$Lambda$a02b774b97db8234e08c6a02dd06557c99779855((() => {
     matchResult6: {
       var x11 = document.getElementById("sectionB");
       if ($uZ((x11 instanceof HTMLAnchorElement))) {
-        $m_LHabitTracker$().reselectTabs__T__V("sectionB");
+        $m_LHabitTracker$().reselectTabs__T__V("sectionC");
         break matchResult6;
       }
       throw new $c_s_MatchError(x11);
     }
-    var this$13 = $m_s_Console$();
-    var this$14 = $n(this$13.out__Ljava_io_PrintStream());
-    this$14.java$lang$JSConsoleBasedPrintStream$$printString__T__V("C\n");
   }));
   $m_Lscalatags_JsDom$all$();
   var ev$2 = new $c_sr_AbstractFunction1_$$Lambda$70e1780b84463d18653aacefee3ab989ac625f28(((f$3$1) => {
