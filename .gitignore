@@ -45,3 +45,5 @@ build/
 
 ### Scala ###
 .bsp/
+/.scala-build/*
+/.idea/*
