@@ -9,31 +9,36 @@ object HabitTracker extends App {
   import scalatags.JsDom.all._
   import scala.collection.mutable.ListBuffer
 
+  val app = dom.document.getElementById("app")
+
   val colors = Seq("red", "green", "blue", "yellow", "pink", "brown")
   var takenColors = new ListBuffer[String]()
 
-  val app = dom.document.getElementById("app")
-
-  def getInput(n: String) = {
-    val in = input(
-      id := n,
-      name := n,
-      width := "150px",
-      placeholder := "Type something in",
-      onkeyup := { (e: dom.Event) =>
-        e match {
+  def createInput(n: String, parentId: String) = {
+    val in = 
+      div(
+        br(),
+        input(
+        id := n,
+        name := n,
+        width := "150px",
+        placeholder := "Enter habit",
+        onkeyup := { (e: dom.Event) =>
+          e match {
           // Add button
           case ee: dom.KeyboardEvent if ee.keyCode == 13 =>
             dom.document.getElementById(n) match {
               case in2:dom.HTMLInputElement =>
                 println(in2.value)
-                val button = getButton(in2.value)
-                app.appendChild(button.render)
+                val button = createButton(in2.value)
+                val section = dom.document.getElementById(parentId)
+                section.appendChild(button.render)
             }
           case _ =>
             println(value)
+         }
         }
-      }
+      )
     )
     in
   }
@@ -42,29 +47,37 @@ object HabitTracker extends App {
   def getColor(): String = {
     val actualColor: List[String] = (colors.toSet diff takenColors.toSet).toList
     val index = util.Random.nextInt(actualColor.length)
-    val c = actualColor(index)
-    takenColors.append(c)
-    c
-    // takenColor
+    val resultColor = actualColor(index)
+    takenColors.append(resultColor)
+    resultColor
   } 
 
-  def getButton(text: String) = {
-    
-    val d = div(
+  def createButton(text: String) = {
+    val btn_id = "id_" + text
+    val btn_key = "btn_key" + text
+    div(
       br(),
       button(
         backgroundColor := { getColor() },
+        id := btn_id,
         text,
-        onclick := { () => println(text) }
+        onclick := { () =>
+          val counterMaybe = Option( dom.window.localStorage.getItem(btn_key) )
+          println(counterMaybe)
+          // Inc counter
+          if (counterMaybe.isDefined){
+            dom.window.localStorage.setItem(btn_key, (counterMaybe.get.toInt + 1).toString() )
+          } else {
+            dom.window.localStorage.setItem(btn_key, "1")
+          }
+        }
       ),
       br()
     )
-    d
   }
 
 
   val sections = List("sectionA", "sectionB", "sectionC")
-
 
   def reselectTabs(selected: String) = {
     sections.foreach(section => {
@@ -87,7 +100,7 @@ object HabitTracker extends App {
     })
   }
 
-  def addTabs() = {
+  def createTabs() = {
      ul(
         cls := "nav nav-pills",
         li(
@@ -107,7 +120,7 @@ object HabitTracker extends App {
           ),
           div( 
             id := "sectionA",
-            "Section A => "
+            b("Daily habits")
           )
         ),
         li(
@@ -126,7 +139,7 @@ object HabitTracker extends App {
           ),
           div( 
             id := "sectionB",
-            "Section B => "
+            b("Manage habits list")
           )
         ),
         li(
@@ -145,23 +158,24 @@ object HabitTracker extends App {
           ),
           div( 
             id := "sectionC",
-            "Section C => "
+            b("Statistics")
           )
         )
       )
   }
 
-  def build(): Unit = {
+  def buildApp(): Unit = {
     // Initial tab selection: sectionA
-    val tabs = addTabs()
+    val tabs = createTabs()
     app.appendChild(tabs.render)
-
-    //val in = getInput("hName")
-    
-
     reselectTabs("sectionALink")
 
+    // Add required set of element to sections
+    val habitsInput = createInput("hName", "sectionA")
+    val sectionA = dom.document.getElementById("sectionA")
+    sectionA.appendChild(habitsInput.render)
   }
 
-  build()
+  buildApp()
+
 }

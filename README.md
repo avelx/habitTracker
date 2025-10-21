@@ -32,4 +32,8 @@ ScalaTags:
 ---------------------------------------------------------------------------------------------------
 
 TODO: 
-    * Fix issue with SBT / still can not find dependencies; 
+* Review UI approach: enter numerical values via sliding bar + yes/no choices
+* Save data into local store 
+* Stats: after some daily data would be available
+* Fix issue with SBT / still can not find dependencies; 
+
